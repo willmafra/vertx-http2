@@ -1,0 +1,40 @@
+group 'com.willmafra'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+
+
+project.ext {
+    groovyVersion = '2.4.6'
+    vertxVersion = '3.3.3'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+
+
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    //Vertx
+    compile "io.vertx:vertx-core:$vertxVersion"
+    compile "io.vertx:vertx-lang-groovy:$vertxVersion"
+    compile "io.vertx:vertx-web:$vertxVersion"
+    compile "io.vertx:vertx-circuit-breaker:$vertxVersion"
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+
+
+    //Log
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.+'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.+'
+
+    // https://mvnrepository.com/artifact/io.netty/netty-tcnative
+    compile group: 'io.netty', name: 'netty-tcnative', version: '1.1.33.Fork22'
+    compile group: 'io.netty', name: 'netty-tcnative-boringssl-static', version: '1.1.33.Fork22'
+}
